@@ -38,7 +38,7 @@ export default function TopNavigation() {
               About
             </Link>
             <Link
-              href="#"
+              href="/statistics"
               className="font-medium text-sm transition-colors hover:underline"
               prefetch={false}
             >

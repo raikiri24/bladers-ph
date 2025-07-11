@@ -1,5 +1,7 @@
 "use client";
 
+import PlayerPerformanceChart from "@/components/authenticated/player-performance-chart";
+import PlayerRankingChart from "@/components/authenticated/player-ranking-chart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   BarChart,
@@ -53,6 +55,8 @@ export default function TournamentStatsPage() {
           </ResponsiveContainer>
         </CardContent>
       </Card>
+      <PlayerPerformanceChart />
+      <PlayerRankingChart />
     </div>
   );
 }
