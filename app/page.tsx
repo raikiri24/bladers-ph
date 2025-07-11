@@ -1,4 +1,6 @@
-import { CardRow } from "@/components/authenticated/card-row";
+"use client";
+import { FloatingDockDemo } from "@/components/authenticated/flaoting-dock";
+import { CanvasRevealEffectDemo } from "@/components/authenticated/players-of-the-week";
 import TopNavigation from "@/components/shared/navigation";
 import { ReviewMarquee } from "@/components/shared/review-marquee";
 import {
@@ -8,7 +10,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-
 const slugs = ["trello", "google", "hubspot", "slack", "zendesk"];
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <div>
       <TopNavigation />
+      <FloatingDockDemo />
       <div className="relative min-h-screen bg-gradient-to-b from-[#0f172a] to-[#0d9488] text-white overflow-hidden ">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[length:20px_20px] opacity-20 z-0" />
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
@@ -28,16 +30,19 @@ export default function Home() {
             Portal
           </h1>
 
-          <CardRow />
           <Button
             variant="outline"
             size="lg"
-            className="border-gray-500 bg-[#101827] "
+            className="border-gray-500 bg-teal-900 "
           >
             Get Started
           </Button>
         </div>
       </div>
+      <div className=" px-20 py-10">
+        <h1 className="text-6xl font-extrabold ">🏆 Player of the week.</h1>
+      </div>
+      <CanvasRevealEffectDemo />
 
       <div className="bg-foreground h-[40rem] px-64 flex gap-10 flex-col py-10">
         <div>

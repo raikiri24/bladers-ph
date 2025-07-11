@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("/font/EthnocentricRgIt.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -20,7 +26,7 @@
 
 :root {
   --radius: 0.5rem;
-
+  --font-sans: "Ethnocentric", sans-serif;
   /* Light Theme */
   --background: oklch(0.98 0.002 270); /* Soft White */
   --foreground: oklch(0.26 0.01 150); /* Charcoal */

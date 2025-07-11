@@ -8,23 +8,17 @@ const techs = [
   { src: "/images/team1.png", alt: "Icon 5" },
 ];
 export function CardRow() {
-  const centerIndex = Math.floor(techs.length / 2);
   return (
     <div className="relative w-full py-16 flex justify-center items-center">
       {/* Horizontal line behind cards */}
-      <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white z-0 " />
+      <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-500 z-0 " />
       {/* Vertical line below center card */}
-      <div className="absolute top-1/2 left-1/2 w-[2px] h-20 bg-white  z-0 translate-x-[-50%] translate-y-[50%]" />
+      <div className="absolute top-1/2 left-1/2 w-[2px] h-20 bg-gray-500  z-0 translate-x-[-50%] translate-y-[50%]" />
 
       {/* Cards */}
-      <div className="relative z-10 flex gap-6">
+      <div className="relative z-10 flex gap-20">
         {techs.map((tech, index) => (
-          <div
-            key={index}
-            className={`transition-all duration-300  ${
-              index === centerIndex ? "scale-130 " : "scale-100"
-            }`}
-          >
+          <div key={index} className={`transition-all duration-300`}>
             <TechCard src={tech.src} alt={tech.alt} />
           </div>
         ))}
