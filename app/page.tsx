@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Cover } from "@/components/ui/cover";
 const slugs = ["trello", "google", "hubspot", "slack", "zendesk"];
 
 export default function Home() {
@@ -19,7 +20,6 @@ export default function Home() {
   return (
     <div>
       <TopNavigation />
-      <FloatingDockDemo />
       <div className="relative min-h-screen bg-gradient-to-b from-[#0f172a] to-[#0d9488] text-white overflow-hidden ">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[length:20px_20px] opacity-20 z-0" />
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
@@ -39,6 +39,16 @@ export default function Home() {
           </Button>
         </div>
       </div>
+      <div className="text-center lg:py-10 py-4">
+        <Cover>
+          <h1 className="lg:text-6xl text-xl font-extrabold ">
+            🏆 Players of the week.
+          </h1>
+        </Cover>
+      </div>
+
+      {/* 
+     
       <div className=" px-20 py-10">
         <h1 className="text-6xl font-extrabold ">🏆 Player of the week.</h1>
       </div>
@@ -150,7 +160,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <ReviewMarquee />
+      <ReviewMarquee /> */}
     </div>
   );
 }
