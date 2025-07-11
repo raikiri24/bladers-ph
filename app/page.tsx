@@ -9,7 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { Cover } from "@/components/ui/cover";
 import {
   Table,
@@ -22,6 +21,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { StickyBanner } from "@/components/ui/sticky-banner";
 import { GlareCard } from "@/components/ui/glare-card";
+import { CardHoverEffectDemo } from "@/components/authenticated/teams-card";
+import { cn } from "@/lib/utils";
 
 type GameLog = {
   id: string;
@@ -78,25 +79,32 @@ export default function Home() {
         </p>
       </StickyBanner>
       <TopNavigation />
-      <div className="relative min-h-screen bg-gradient-to-b from-[#0f172a] to-[#0d9488] text-white overflow-hidden ">
+
+      <div className="relative max-sm:flex-col flex flex-col h-[50rem] w-full gap-0 items-center justify-center bg-gradient-to-b from-[#0f172a] to-[#0d9488] text-white overflow-hidden">
+        <div
+          className={cn(
+            "absolute inset-0 z-0",
+            "[background-size:40px_40px]",
+            "[background-image:linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]"
+          )}
+        />
+
+        {/* Radial dots */}
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[length:20px_20px] opacity-20 z-0" />
-        <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
-          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500 drop-shadow-md">
+
+        {/* Faded radial mask */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+        <div>
+          <h1 className="text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500 drop-shadow-md">
             Beyblade X Philippines
           </h1>
-          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500 drop-shadow-md">
+          <h1 className="text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500 drop-shadow-md">
             Portal
           </h1>
-
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-gray-500 bg-teal-900 "
-          >
-            Get Started
-          </Button>
         </div>
+        <CardHoverEffectDemo />
       </div>
+
       <div className="text-center lg:py-10 py-4 flex flex-col items-center ">
         <Cover>
           <h1 className="lg:text-6xl text-xl font-extrabold ">
