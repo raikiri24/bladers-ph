@@ -2,16 +2,8 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import type { ReactNode } from "react";
 import { useState } from "react";
+import { MapPin } from "lucide-react";
 
-const placeholderBase64 =
-  "data:image/svg+xml;base64," +
-  btoa(`
-  <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="48" stroke="#0f172a" stroke-width="4" fill="#0d9488" />
-    <path d="M45 50 L55 50 M50 45 L50 55" stroke="#fff" stroke-width="2" stroke-linecap="round" />
-    <circle cx="50" cy="50" r="3" fill="#fff" />
-  </svg>
-`);
 type HoverCardItem = {
   title: string;
   description: string | ReactNode;
@@ -61,15 +53,37 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
 
+          {/* Top Ranking Ribbon */}
+          {idx === 0 && (
+            <div className="absolute top-2 left-2 z-50 rounded px-2 py-1 text-xs font-bold bg-yellow-400 text-black shadow">
+              🥇 Top 1
+            </div>
+          )}
+          {idx === 1 && (
+            <div className="absolute top-2 left-2 z-50 rounded px-2 py-1 text-xs font-bold bg-gray-300 text-black shadow">
+              🥈 Top 2
+            </div>
+          )}
+          {idx === 2 && (
+            <div className="absolute top-2 left-2 z-50 rounded px-2 py-1 text-xs font-bold bg-amber-700 text-white shadow">
+              🥉 Top 3
+            </div>
+          )}
+
           <Card>
             <div className="flex items-center gap-4">
-              {/* Left: Title + Description */}
+              {/* Left: Title & Description */}
               <div className="w-[70%]">
                 <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
+                <CardDescription>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <MapPin className="w-4 h-4" />
+                    {item.description}
+                  </div>
+                </CardDescription>
               </div>
 
-              {/* Right: Logo */}
+              {/* Right: Logo or Placeholder */}
               <div className="w-[30%] flex items-center justify-end">
                 {item.logo ? (
                   <img
@@ -78,7 +92,7 @@ export const HoverEffect = ({
                     className="max-h-16 object-contain"
                   />
                 ) : (
-                  <div className="text-4xl">🌀</div>
+                  <div className="text-4xl animate-spin">🌀</div>
                 )}
               </div>
             </div>
