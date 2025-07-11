@@ -80,7 +80,7 @@ export default function Home() {
       </StickyBanner>
       <TopNavigation />
 
-      <div className="relative max-sm:flex-col flex flex-col h-[50rem] w-full gap-0 items-center justify-center bg-gradient-to-b from-[#0f172a] to-[#0d9488] text-white overflow-hidden">
+      <div className="relative max-sm:flex-col flex flex-col min-h-[50rem] w-full gap-0 items-center justify-center bg-gradient-to-b from-[#0f172a] to-[#0d9488] text-white overflow-hidden">
         <div
           className={cn(
             "absolute inset-0 z-0",
@@ -94,7 +94,7 @@ export default function Home() {
 
         {/* Faded radial mask */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-        <div>
+        <div className=" !pt-10 ">
           <h1 className="text-center text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500 drop-shadow-md">
             Beyblade X Philippines
           </h1>
