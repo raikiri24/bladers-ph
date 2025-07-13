@@ -72,7 +72,8 @@ const mockHistoryLogs: GameLog[] = [
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
+      <FloatingDockDemo />
       <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600 text-sm">
         <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
           Still in development

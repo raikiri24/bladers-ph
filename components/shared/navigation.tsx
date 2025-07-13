@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { BadgeQuestionMark, ChartPie, House } from "lucide-react";
 
 export default function TopNavigation() {
   const router = useRouter();
@@ -65,6 +66,36 @@ export default function TopNavigation() {
           </div>
         </div>
       </div>
+      <nav className="md:hidden flex gap-6 justify-center border-2 px-1 py-2 bg-teal-700">
+        <Link
+          href="#"
+          className="font-medium text-xs transition-colors hover:underline border-2 rounded-lg p-2 border-gray-300"
+          prefetch={false}
+        >
+          <House width={18} height={18} />
+        </Link>
+        <Link
+          href="#"
+          className="font-medium text-xs transition-colors hover:underline border-2 rounded-lg p-2 border-gray-300"
+          prefetch={false}
+        >
+          <BadgeQuestionMark width={18} height={18} />
+        </Link>
+        <Link
+          href="/statistics"
+          className="font-medium text-xs transition-colors hover:underline border-2 rounded-lg p-2 border-gray-300"
+          prefetch={false}
+        >
+          <ChartPie width={18} height={18} />
+        </Link>
+        <Link
+          href="#"
+          className="font-medium text-xs transition-colors hover:underline border-2 rounded-lg p-2 border-gray-300"
+          prefetch={false}
+        >
+          Join Us
+        </Link>
+      </nav>
     </nav>
   );
 }
