@@ -1,14 +1,7 @@
 "use client";
-import { FloatingDockDemo } from "@/components/authenticated/flaoting-dock";
-import { CanvasRevealEffectDemo } from "@/components/authenticated/players-of-the-week";
+
 import TopNavigation from "@/components/shared/navigation";
-import { ReviewMarquee } from "@/components/shared/review-marquee";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import { Cover } from "@/components/ui/cover";
 import {
   Table,
@@ -73,7 +66,6 @@ const mockHistoryLogs: GameLog[] = [
 export default function Home() {
   return (
     <div className="relative">
-      <FloatingDockDemo />
       <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600 text-sm">
         <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
           Still in development

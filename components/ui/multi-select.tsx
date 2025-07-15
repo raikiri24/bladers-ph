@@ -1,26 +1,63 @@
+// components/ui/multi-select.tsx
+
 "use client";
 
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
-export function MultiSelect({ options, selected, onChange }: any) {
-  const toggle = (val: string) => {
-    if (selected.includes(val)) {
-      onChange(selected.filter((v: any) => v !== val));
+interface MultiSelectProps {
+  options: string[];
+  selected: string[];
+  onChange: (selected: string[]) => void;
+}
+
+export function MultiSelect({ options, selected, onChange }: MultiSelectProps) {
+  const [localOptions, setLocalOptions] = useState(options);
+  const [newEntry, setNewEntry] = useState("");
+
+  const toggle = (option: string) => {
+    if (selected.includes(option)) {
+      onChange(selected.filter((v) => v !== option));
     } else {
-      onChange([...selected, val]);
+      onChange([...selected, option]);
+    }
+  };
+
+  const addNew = () => {
+    const trimmed = newEntry.trim();
+    if (trimmed && !localOptions.includes(trimmed)) {
+      setLocalOptions([...localOptions, trimmed]);
+      onChange([...selected, trimmed]);
+      setNewEntry("");
     }
   };
 
   return (
-    <div className="border rounded-md p-2 space-y-1 max-h-40 overflow-y-auto">
-      {options.map((opt: any) => (
-        <label key={opt.value} className="flex items-center gap-2">
+    <div className="space-y-2">
+      <div className="flex items-center gap-2">
+        <Input
+          placeholder="Add new participant"
+          value={newEntry}
+          onChange={(e) => setNewEntry(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && addNew()}
+        />
+        <Button type="button" onClick={addNew}>
+          Add
+        </Button>
+      </div>
+
+      {localOptions.map((option) => (
+        <div key={option} className="flex items-center space-x-2">
           <Checkbox
-            checked={selected.includes(opt.value)}
-            onCheckedChange={() => toggle(opt.value)}
+            id={option}
+            checked={selected.includes(option)}
+            onCheckedChange={() => toggle(option)}
           />
-          {opt.label}
-        </label>
+          <Label htmlFor={option}>{option}</Label>
+        </div>
       ))}
     </div>
   );

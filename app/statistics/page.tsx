@@ -33,31 +33,31 @@ import {
 } from "recharts";
 
 const mockData = [
-  { name: "Spyk", wins: 8 },
-  { name: "Kaelabubu", wins: 6 },
-  { name: "Eddy", wins: 6 },
-  { name: "Biryani", wins: 5 },
-  { name: "Sijey", wins: 4 },
-  { name: "Triple A", wins: 4 },
-  { name: "Nacho", wins: 3 },
-  { name: "Hotshot", wins: 3 },
-  { name: "Kenzo", wins: 3 },
-  { name: "Leandro", wins: 3 },
-  { name: "Micjo", wins: 3 },
-  { name: "Sopi", wins: 3 },
-  { name: "Liam", wins: 2 },
-  { name: "EzPoohC", wins: 2 },
-  { name: "Jean", wins: 2 },
-  { name: "Dors", wins: 2 },
-  { name: "Jejo", wins: 2 },
-  { name: "Navi", wins: 2 },
-  { name: "Kael", wins: 2 },
-  { name: "Yeoji", wins: 2 },
-  { name: "Bella", wins: 2 },
-  { name: "Tinapay", wins: 1 },
-  { name: "Mikee", wins: 1 },
-  { name: "Brentypetestos", wins: 1 },
-  { name: "CM Punk", wins: 1 },
+  { id: 1, name: "Spyk", wins: 8 },
+  { id: 2, name: "Kaelabubu", wins: 6 },
+  { id: 3, name: "Eddy", wins: 6 },
+  { id: 4, name: "Biryani", wins: 5 },
+  { id: 5, name: "Sijey", wins: 4 },
+  { id: 6, name: "Triple A", wins: 4 },
+  { id: 7, name: "Nacho", wins: 3 },
+  { id: 8, name: "Hotshot", wins: 3 },
+  { id: 9, name: "Kenzo", wins: 3 },
+  { id: 10, name: "Leandro", wins: 3 },
+  { id: 11, name: "Micjo", wins: 3 },
+  { id: 12, name: "Sopi", wins: 3 },
+  { id: 13, name: "Liam", wins: 2 },
+  { id: 14, name: "EzPoohC", wins: 2 },
+  { id: 15, name: "Jean", wins: 2 },
+  { id: 16, name: "Dors", wins: 2 },
+  { id: 17, name: "Jejo", wins: 2 },
+  { id: 18, name: "Navi", wins: 2 },
+  { id: 19, name: "Kael", wins: 2 },
+  { id: 20, name: "Yeoji", wins: 2 },
+  { id: 21, name: "Bella", wins: 2 },
+  { id: 22, name: "Tinapay", wins: 1 },
+  { id: 23, name: "Mikee", wins: 1 },
+  { id: 24, name: "Brentypetestos", wins: 1 },
+  { id: 25, name: "CM Punk", wins: 1 },
 ];
 
 export default function TournamentStatsPage() {
@@ -95,57 +95,33 @@ export default function TournamentStatsPage() {
               <TableRow>
                 <TableCell rowSpan={2}>Match Score</TableCell>
                 <TableCell>Per Win</TableCell>
-                <TableCell>+20</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Per Loss</TableCell>
-                <TableCell>-10</TableCell>
-              </TableRow>
-
-              <TableRow>
-                <TableCell rowSpan={4}>Finish Bonus</TableCell>
-                <TableCell>Spin Finish</TableCell>
                 <TableCell>+5</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Over Finish</TableCell>
-                <TableCell>+10</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Burst Finish</TableCell>
-                <TableCell>+15</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Extreme Finish</TableCell>
-                <TableCell>+25</TableCell>
+                <TableCell>Per Loss</TableCell>
+                <TableCell>-5</TableCell>
               </TableRow>
 
               <TableRow>
                 <TableCell rowSpan={5}>Placement Bonus</TableCell>
                 <TableCell>Champion</TableCell>
-                <TableCell>+100</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2nd Place</TableCell>
-                <TableCell>+75</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>3rd Place</TableCell>
-                <TableCell>+50</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Swiss King</TableCell>
                 <TableCell>+30</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>TopCut</TableCell>
-                <TableCell>+20</TableCell>
+                <TableCell>2nd Place</TableCell>
+                <TableCell>+15</TableCell>
               </TableRow>
-
               <TableRow>
-                <TableCell>Penalty</TableCell>
-                <TableCell>Per Warning Point</TableCell>
-                <TableCell>-10</TableCell>
+                <TableCell>3rd Place</TableCell>
+                <TableCell>+10</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Swiss King</TableCell>
+                <TableCell>+10</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>TopCut</TableCell>
+                <TableCell>+10</TableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -173,24 +149,28 @@ export default function TournamentStatsPage() {
           <CardTitle className="text-xl">Player Wins</CardTitle>
         </CardHeader>
         <CardContent>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={mockData}>
-              <XAxis
-                dataKey="name"
-                interval={0}
-                angle={-45}
-                textAnchor="end"
-                height={70}
-              />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="wins" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
+          <div className="w-full overflow-x-auto">
+            <div className="min-w-[700px]">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={mockData}>
+                  <XAxis
+                    dataKey="name"
+                    interval={0}
+                    angle={-45}
+                    textAnchor="end"
+                    height={70}
+                  />
+                  <YAxis />
+                  <Tooltip />
+                  <Bar dataKey="wins" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </CardContent>
       </Card>
-      <PlayerPerformanceChart />
-      <PlayerRankingChart />
+      {/* <PlayerPerformanceChart />
+      <PlayerRankingChart /> */}
     </div>
   );
 }

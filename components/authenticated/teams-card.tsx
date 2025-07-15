@@ -2,9 +2,6 @@ import { HoverEffect } from "../ui/card-hover-effect";
 import { MapPin } from "lucide-react";
 
 export function CardHoverEffectDemo() {
-  const placeholderBase64 =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////////8+2kZXAAAAD3RSTlMAoIDB+Pv6++fnmJjZ1e7oKSQ9AAAB4ElEQVR42u3YwQqCQBBA0YqYIQqEFvP//9Y3UapJgZJnt8k3IfUjROV1vh9oPGDWW5GCeIUTg3RCZzRCLmVYQSKbGUUSq2xRRLrbFGEqtsUUSq2xRRLrbFGEqtsUUSq2xRRLrbFGEqtsUUSq2xRRJrczkIfh8gGElZxnyL0LdLDXxvUfpdYPkt08NtAjrtrKXYU/ZoYv4TfnZvU3NbwGWX6ttqMZwQbTafz8AdqpXxuHa8yQAAAAASUVORK5CYII=";
-
   const maxCards = 5;
 
   const visibleCards = teams.slice(0, maxCards);
@@ -16,7 +13,7 @@ export function CardHoverEffectDemo() {
         {
           title: "More Teams →",
           description: "View all participating teams.",
-          logo: "/logos/more.png",
+          // logo: "/logos/more.png",
           link: "/teams",
         },
       ]
@@ -31,56 +28,56 @@ export function CardHoverEffectDemo() {
 
 export const teams = [
   {
-    title: "Storm Breakers",
-    description: "SM North EDSA, Quezon City",
-    // logo: "/logos/storm-breakers.png",
-    link: "#E",
+    title: "Satori Bladers",
+    description: "Satori Residences, F. Pasco, Ave",
+    logo: "/images/satori.jpeg",
+    link: "https://www.facebook.com/people/Satori-Bladers/61577278157676/",
   },
   {
-    title: "Phantom Reapers",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/phantom-reapers.png",
     link: "#D",
   },
   {
-    title: "Blazing Raptors",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/blazing-raptors.png",
     link: "#C",
   },
   {
-    title: "Aqua Vortex",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/aqua-vortex.png",
     link: "#B",
   },
   {
-    title: "Iron Titans",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/iron-titans.png",
     link: "#A",
   },
   {
-    title: "Iron Titans",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/iron-titans.png",
     link: "#A",
   },
   {
-    title: "Iron Titans",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/iron-titans.png",
     link: "#A",
   },
   {
-    title: "Iron Titans",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/iron-titans.png",
     link: "#A",
   },
   {
-    title: "Iron Titans",
-    description: "Ayala Malls Feliz, Pasig",
+    title: "TBD",
+    description: "TBD",
     // logo: "/logos/iron-titans.png",
     link: "#A",
   },
